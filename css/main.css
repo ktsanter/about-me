@@ -1,0 +1,59 @@
+.kts-ii-color-scheme {
+	--kts-ii-color1: black;
+	--kts-ii-color2: white;
+	--kts-ii-color3: #135f6f;
+}
+
+body {
+	color: var(--kts-ii-color1);
+	background-color: var(--kts-ii-color2);
+	font-family: Gotham, Montserrat, "Noto Sans", Helvetica, Calibri, Arial, "Noto Serif", Garamond, "Times New Roman";
+	font-size: 13px;
+	/*width: 80%*/
+}
+
+.kts-notice {
+	color: blue;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.kts-instructor-info {
+}
+
+.kts-instructor-info .ii-coursename {
+	font-style: italic;
+}
+
+.kts-instructor-info .ii-container {
+  width:900px;
+  height:420px;
+}
+
+.kts-instructor-info .ii-heading {
+  background-color: var(--kts-ii-color3);
+  color: var(--kts-ii-color2);;
+  border-radius:6px;
+  font-weight:bold;
+  font-size:15px;
+  padding-left:5px;
+  margin-bottom:5px;
+}
+
+.kts-instructor-info .ii-subheading {
+  border:1px solid var(--kts-ii-color1);
+  border-radius:6px;
+  font-weight:bold;
+  padding-left:5px;
+  margin-bottom:5px;
+}
+
+.kts-instructor-info .ii-marked {
+  font-weight:bold;
+  font-style:italic;
+}
+
+.kts-instructor-info .ii-blackboard {
+  border-radius:4px;
+  padding:0 4px 0 4px;
+}
