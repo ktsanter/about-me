@@ -57,7 +57,7 @@ const app = function () {
 	function _addFlipper() {
 		var iframe = document.createElement('iframe');
 		iframe.src = settings.flipperURL + '?configkey=' + settings.flipper;
-		iframe.style = "width: 620px; height: 570px; border:none";
+		iframe.style = "width: 620px; height: 520px; border:none";
 		page.flipperwrapper.appendChild(iframe);
 	}
 	
