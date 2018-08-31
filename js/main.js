@@ -2,7 +2,9 @@
 //
 const app = function () {
 	const page = {};
-	const settings = {};
+	const settings = {
+		"flipperURL": "https://ktsanter.github.io/image-flipper/index.html"
+	};
 	
 	//---------------------------------------
 	// get things going
@@ -16,6 +18,7 @@ const app = function () {
 			_setNotice('error in parameters');
 		} else {
 			_setCourseName();
+			console.log(JSON.stringify(settings));
 			if (settings.includeflipper) _addFlipper();
 		}
 	}
@@ -29,13 +32,14 @@ const app = function () {
 				
 		var urlParams = new URLSearchParams(window.location.search);
 		params.coursename = urlParams.has('coursename') ? urlParams.get('coursename') : null;
-		params.includeflipper = urlParams.has('flipper');
+		params.flipper = urlParams.has('flipper') ? urlParams.get('flipper') : null;
 
 		if (params.coursename != null) {
 			settings.coursename = params.coursename;
 			success = true;
 		}
-		settings.includeflipper = params.includeflipper;
+		settings.flipper = params.flipper;
+		settings.includeflipper = (params.includeflipper == null);
 		
 		return success;
 	}
@@ -51,7 +55,10 @@ const app = function () {
 	}
 		
 	function _addFlipper() {
-		page.flipperwrapper.innerHTML = 'include flipper';
+		var iframe = document.createElement('iframe');
+		iframe.src = settings.flipperURL + '?sheetname=' + settings.flipper;
+		iframe.style = "width: 620px; height: 570px; border:none";
+		page.flipperwrapper.appendChild(iframe);
 	}
 	
 	//---------------------------------------
