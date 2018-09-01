@@ -18,7 +18,6 @@ const app = function () {
 			_setNotice('error in parameters');
 		} else {
 			_setCourseName();
-			console.log(JSON.stringify(settings));
 			if (settings.includeflipper) _addFlipper();
 		}
 	}
